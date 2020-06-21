@@ -10,7 +10,7 @@ const debug = Debug("studtastic-controller");
  * @return undefined
  */
 export const indexAction = async (ctx) => {
-  await ctx.render("index");
+  await ctx.render("pages/00-index");
 }
 
 /**
@@ -27,7 +27,7 @@ export const loginAction = async (ctx) => {
 }
 
 export const overviewAction = async (ctx) => {
-  await ctx.render('overview');
+  await ctx.render("pages/01-overview");
 }
 
 // /**

@@ -3,6 +3,7 @@ footer {
     position: absolute;
     bottom: 0;
     padding: $spacing/2;
+    border-top: thick solid $dark-blue;
 
     div.footer-index {
         text-align: center;

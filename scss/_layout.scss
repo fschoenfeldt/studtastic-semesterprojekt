@@ -11,20 +11,24 @@ h1 {
 }
 
 body {
+    min-width: 40rem;
     display: grid;
-    grid-template-rows: $spacing*5 auto $spacing*3;
+    grid-template-rows: $spacing*8 auto $spacing*3;
+    grid-row-gap: $spacing;
 
     >main {
         // display: grid;
         // grid-template-rows: $spacing*4 auto;
     }
 
-    &#index {
-        grid-template-rows: $spacing*5 auto $spacing*3;
-
+    &#index, &#overview {
         >main {
             display: flex;
             align-items: center;
+        }
+
+        >header {
+            display: flex;
         }
     }
 }

@@ -1,11 +1,13 @@
-#index header {
-    height: 100%;
+header {
     display: flex;
     justify-content: space-between;
-    margin: $spacing 0;
+    padding: $spacing 0;
     border-bottom: thick solid $dark-blue;
 
-    >* {
+    * {
         height: 100%;
     }
+
+    .org--logo { margin-right: $spacing; }
+    .brand--logo { margin-left: $spacing; }
 }
