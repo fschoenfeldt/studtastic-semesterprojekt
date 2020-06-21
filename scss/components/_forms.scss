@@ -3,6 +3,8 @@ form {
         display: block;
         border-radius: $spacing;
         padding: $spacing/4;
+        margin-bottom: $spacing/2;
+        width: 100%;
     }
     label {
         font-size: 85%;
