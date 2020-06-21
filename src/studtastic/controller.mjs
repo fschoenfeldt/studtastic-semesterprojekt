@@ -1,4 +1,6 @@
 import * as model from "./model.mjs";
+import Debug from 'debug';
+const debug = Debug("studtastic-controller");
 
 /**
  * Handles -list all boomarks- request from the browser and sends it to the model
@@ -8,9 +10,20 @@ import * as model from "./model.mjs";
  * @return undefined
  */
 export async function indexAction(ctx) {
-  await ctx.render("index", {
-    entries: await model.getAll(ctx.db)
-  });
+  await ctx.render("index");
+}
+
+/**
+ * Handles Login POST Action
+ * @module controller
+ * @function
+ * @param {Object} - the context of koa
+ * @return undefined
+ */
+export async function loginAction(ctx) {
+  debug(`Login-Request by:`);
+  debug(ctx.request.body);
+  ctx.body = ctx.request.body;
 }
 
 /**

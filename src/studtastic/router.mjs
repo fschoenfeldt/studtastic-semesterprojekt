@@ -7,6 +7,7 @@ const router = new Router();
 
 // Assign Routes
 router.get('/', controller.indexAction);
+router.post('/loginAction', controller.loginAction);
 // router.get('/bookmark/add', formController.add);
 // router.post('/bookmark/add', formController.submitForm);
 // router.get('/bookmark/:ID', controller.showAction);

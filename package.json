@@ -4,8 +4,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "DEBUG=* npx nodemon server",
-        "dev:win": "@powershell -Command $env:DEBUG='*';nodemon --experimental-modules server.js",
+        "dev": "DEBUG=studtastic* npx nodemon server",
+        "dev:win": "@powershell -Command $env:DEBUG='studtastic*';nodemon --experimental-modules server.js",
         "build:css": "cd gulp && npm run build",
         "watch:css": "cd gulp && npm run dev",
         "postinstall": "cd gulp && npm i"
@@ -14,7 +14,9 @@
         "@koa/router": "^9.0.1",
         "koa": "^2.12.1",
         "koa-body": "^4.2.0",
+        "koa-bodyparser": "^4.3.0",
         "koa-nunjucks-async": "^1.2.0",
+        "koa-session": "^6.0.0",
         "koa-static": "^5.0.0",
         "sqlite": "^4.0.11",
         "sqlite3": "^4.2.0"
