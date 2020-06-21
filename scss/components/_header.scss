@@ -1,11 +1,11 @@
-header {
-    height: 6rem;
+#index header {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     margin: $spacing 0;
     border-bottom: thick solid $dark-blue;
 
     >* {
-        height: 5rem;
+        height: 100%;
     }
 }

@@ -1,10 +1,26 @@
 $spacing: 1rem;
 
-body, html {
+body,
+html {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     display: grid;
+    grid-template-rows: $spacing*5 auto $spacing*3;
+
+    >main {
+        // display: grid;
+        // grid-template-rows: $spacing*4 auto;
+    }
+
+    &#index {
+        grid-template-rows: $spacing*5 auto $spacing*3;
+
+        >main {
+            display: flex;
+            align-items: center;
+        }
+    }
 }
