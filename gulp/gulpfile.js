@@ -31,7 +31,7 @@ const styles = () => {
 
 const minifyCSS = () => {
     return gulp
-        .src(`${paths.dest}/style.css`)
+        .src(`${paths.dest}/studtastic.css`)
         .pipe(
             cleanCSS({
                 debug: false

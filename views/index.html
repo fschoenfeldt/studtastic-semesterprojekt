@@ -1,23 +1,5 @@
 {% extends 'layout.html' %}
-{% block title %}Bookmark Übersicht{% endblock %}
+{% block title %}Studtastic{% endblock %}
 {% block content %}
-  {% for entry in entries %}
-    <div class="entry">
-      <p>
-        <a href="/bookmark/{{entry.ID}}">
-          {{entry.Title}}
-        </a>
-      </p>
-      <p>
-        <a href="{{entry.URI}}" title="{{entry.Title}}" target="_blank">
-          {{entry.URI}}
-        </a>
-      </p>
-      <p>
-        {{entry.Tags}}
-      </p>
-    </div>
-  {% else %}
-    warning: no entries found!
-  {% endfor %}
+  <img alt="Studtastic Logo" src="/img/studtastic-logo@2x.png" />
 {% endblock %}
