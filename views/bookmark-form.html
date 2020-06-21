@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <form class="entry-form" action="" method="POST">
+    <div>
+      <label for="Title">Bookmark Title</label><br>
+      <input type="text" id="Title" name="form[Title]" placeholder="Title">
+    </div>
+    <div>
+      <label for="URI">Bookmark URI</label><br>
+      <input type="text" id="URI" name="form[URI]" placeholder="URI">
+    </div>
+    <div>
+      <label for="Description">Bookmark Description</label><br>
+      <textarea id="Description" name="form[Description]" placeholder="Description"></textarea>
+    </div>
+    <div>
+      <label for="URI">Bookmark Tags</label><br>
+      <input type="text" id="Tags" name="form[Tags]" placeholder="Tags">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}
