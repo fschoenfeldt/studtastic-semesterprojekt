@@ -1,0 +1,23 @@
+form {
+    input {
+        display: block;
+        border-radius: $spacing;
+        padding: $spacing/4;
+    }
+    label {
+        font-size: 85%;
+    }
+    &.form--login {
+        width: 25rem;
+        padding: $spacing*3 1rem;
+        margin: 0 auto;
+        border-top: thick solid $dark-blue;
+        border-bottom: thick solid $orange;
+
+        >h1 {
+            margin-bottom: $spacing;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    } 
+}  

@@ -9,17 +9,13 @@
       {% block title %}{% endblock %}
     </title>
   </head>
-  <body>
+  {% if not page is defined %}
+    {% set page = "page" %}
+  {% endif %}
+  <body id="{{page}}">
     <header>
       {% block header %}{% endblock %}
     </header>
-    <nav style="opacity: 0.5">
-      <ul>
-        <li>
-          <a href="/" title="Index Page">Index</a>
-        </li>
-      </ul>
-    </nav>
     <main>
       {% block content %}{% endblock %}
     </main>
