@@ -1,0 +1,15 @@
+.sidebar--user {
+    background-color: $light-grey;
+    
+    .user--note {
+        text-align: center;
+        margin: $spacing;
+        background: $light;
+        padding: $spacing/2;
+        border: thin solid $grey;
+        border-radius: $spacing/2;
+    }
+    .users {
+        margin: $spacing;
+    }
+} 
