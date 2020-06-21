@@ -10,6 +10,7 @@ cd studtastic-semesterprojekt/
 
 # install dependencies
 npm i
+npm i -g nodemon
 
 # starting server (UNIX)
 npm run dev
