@@ -9,6 +9,8 @@ const router = new Router();
 router.get('/', controller.indexAction);
 router.post('/loginAction', controller.loginAction);
 router.get('/overview', controller.overviewAction);
+router.get('/channel', controller.channelAction);
+router.get('/logout', controller.logoutAction);
 // router.get('/bookmark/add', formController.add);
 // router.post('/bookmark/add', formController.submitForm);
 // router.get('/bookmark/:ID', controller.showAction);

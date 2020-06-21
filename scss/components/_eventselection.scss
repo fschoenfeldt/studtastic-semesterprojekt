@@ -42,3 +42,29 @@ div.eventselection {
         }
     }
 }
+
+#channel .sidebar--channels {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-right: solid thick $dark-blue;   
+    padding: 0;
+
+    ul.events {
+        flex-direction: column;
+
+        li.event {
+            width: $spacing*4;
+            height: $spacing*4;
+            margin-bottom: $spacing;
+
+            .event--title {
+                font-size: $spacing;
+            }
+
+            &.active {
+                border-bottom: thick solid $orange;
+            }
+        }
+    }
+}

@@ -31,4 +31,16 @@ body {
             display: flex;
         }
     }
+
+    &#channel {
+        grid-template-rows: auto $spacing*3;
+        >header {
+            display: none;
+        }
+        >main {
+            display: grid;
+            grid-template-columns: $spacing*5 $spacing*12 auto $spacing*4;
+            grid-column-gap: $spacing;
+        }
+    }
 }

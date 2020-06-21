@@ -7,11 +7,7 @@
 {% block content %}
     <div class="eventselection">
         <h1>Bitte wähle Deine Veranstaltung</h1>
-        <ul class="events">
-            <a href="#"><li class="event"><span class="event--title">SPROG</span></li></a>
-            <a href="#"><li class="event blue"><span class="event--title">FRON</span></li></a>
-            <a href="#"><li class="event"><span class="event--title">ALG</span></li></a>
-        </ul>
+        {% include "components/eventList.html" %}
     </div>
 {% endblock %}
 {% block footer %}

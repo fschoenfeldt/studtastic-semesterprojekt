@@ -1,0 +1,21 @@
+.chat {
+    display: grid;
+    grid-template-rows: auto $spacing*8;
+
+    .chat--input {
+        padding: $spacing;
+        border: solid $grey;
+        border-radius: $spacing*2;
+
+        .topbar {
+            span {
+                background: $grey;
+            }
+        } 
+
+        >textarea {
+            width: 100%;
+            height: $spacing*4;
+        }
+    }
+}

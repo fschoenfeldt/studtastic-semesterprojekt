@@ -2,6 +2,16 @@ import * as model from "./model.mjs";
 import Debug from 'debug';
 const debug = Debug("studtastic-controller");
 
+const studtasticObject = {
+  user: {
+    username: null,
+    password: null
+  },
+  channel: {
+    name: null
+  }
+}
+
 /**
  * Handles -list all boomarks- request from the browser and sends it to the model
  * @module controller
@@ -10,7 +20,11 @@ const debug = Debug("studtastic-controller");
  * @return undefined
  */
 export const indexAction = async (ctx) => {
-  await ctx.render("pages/00-index");
+  ctx.session.studtastic = studtasticObject;
+  await ctx.render("pages/00-index", {
+    user: ctx.session.studtastic.user,
+    channel: ctx.session.studtastic.channel
+  });
 }
 
 /**
@@ -22,12 +36,40 @@ export const indexAction = async (ctx) => {
  */
 export const loginAction = async (ctx) => {
   ctx.body = ctx.request.body;
-  ctx.session.user, ctx.state.user = ctx.request.body.login;
+
+  ctx.session.studtastic.user = ctx.request.body.login;
+
   ctx.redirect('/overview');
 }
 
+/**
+ * Shows the channel selection
+ * @module controller
+ * @function
+ * @param {Object} - the context of koa
+ * @return undefined
+ */
 export const overviewAction = async (ctx) => {
-  await ctx.render("pages/01-overview");
+  debug(ctx.session.studtastic)
+  await ctx.render("pages/01-overview", {
+    user: ctx.session.studtastic.user,
+    channel: ctx.session.studtastic.channel
+  });
+}
+
+export const channelAction = async (ctx) => {
+  debug(ctx.session.studtastic);
+  ctx.session.studtastic.channel.name = ctx.request.query.name;
+
+  await ctx.render("pages/03-channel", {
+    user: ctx.session.studtastic.user,
+    channel: ctx.session.studtastic.channel
+  });
+}
+
+export const logoutAction = async (ctx) => {
+  ctx.session = null;
+  ctx.redirect('/');
 }
 
 // /**
