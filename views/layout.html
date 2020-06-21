@@ -10,7 +10,10 @@
     </title>
   </head>
   <body>
-    <nav>
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+    <nav style="opacity: 0.5">
       <ul>
         <li>
           <a href="/" title="Index Page">Index</a>
