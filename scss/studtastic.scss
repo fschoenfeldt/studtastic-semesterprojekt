@@ -1,2 +1,8 @@
-@import 'reset';
-@import 'colors';
+// utilities
+@import 'utilities/reset';
+@import 'utilities/colors';
+
+// components
+@import 'components/forms';
+
+@import 'layout';
