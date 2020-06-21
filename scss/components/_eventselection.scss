@@ -1,5 +1,5 @@
 div.eventselection {
-    width: 25rem;
+    width: 40rem;
     margin: 0 auto;
     padding: $spacing*3;
     border: thick solid $grey;
@@ -9,10 +9,13 @@ div.eventselection {
         justify-content: space-around;
 
         li.event {
-            height: $spacing*6;
-            width: $spacing*6;
+            display: flex;
+            align-items: center;
+            height: $spacing*8;
+            width: $spacing*8;
             border: thin solid $dark-blue;
             border-radius: 50%;
+            text-align: center;
         }
     }
 } 

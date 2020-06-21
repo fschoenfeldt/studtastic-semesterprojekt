@@ -6,6 +6,10 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    margin-bottom: 1rem;
+}
+
 body {
     display: grid;
     grid-template-rows: $spacing*5 auto $spacing*3;
