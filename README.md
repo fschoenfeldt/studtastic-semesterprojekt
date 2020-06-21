@@ -11,8 +11,11 @@ cd studtastic-semesterprojekt/
 # install dependencies
 npm i
 
-# starting server
+# starting server (UNIX)
 npm run dev
+
+# starting server (Windows)
+npm run dev:win
 
 # compiling scss
 npm run build:css

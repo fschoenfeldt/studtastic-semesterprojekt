@@ -5,6 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "DEBUG=* npx nodemon server",
+        "dev:win": "$env:DEBUG='*';node app.js",
         "build:css": "cd gulp && npm run build",
         "watch:css": "cd gulp && npm run dev",
         "postinstall": "cd gulp && npm i"
