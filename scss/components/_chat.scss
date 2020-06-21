@@ -16,6 +16,7 @@
         >textarea {
             width: 100%;
             height: $spacing*4;
+            resize: none;
         }
     }
 }
