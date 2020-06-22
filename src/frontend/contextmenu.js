@@ -3,31 +3,39 @@ import ContextMenu from './lib/tui-context-menu';
 const registerUserContextMenu = () => {
     const container = document.getElementById('fl');
     const userContextMenu = new ContextMenu(container);
-    
+
     function onClick(e, cmd) {
         console.log(cmd);
     }
-    
-    userContextMenu.register('#target', onClick, [
-        {title: 'New Folder'},
+
+    userContextMenu.register('#target', onClick, [{
+            title: 'Stummschalten'
+        },
         {
-            title: 'New File',
-            menu: [
-                {title: '20170101.xls'},
-                {title: 'image.png', command: 'export-to-png'},
-                {title: 'image.jpg', command: 'export-to-jpg'}
+            title: 'Einladen',
+            menu: [{
+                    title: 'Sprachkanal',
+                    command: 'invite-voice'
+                },
+                {
+                    title: 'Textkanal',
+                    command: 'invite-text'
+                }
             ]
         },
-        {separator: true},
+        {
+            title: 'Blub'
+        }
+        /* {separator: true},
         {title: 'Rename'},
         {title: 'Delete'},
         {title: 'Copy', disable: true},
-        {title: 'Paste', disable: true}
+        {title: 'Paste', disable: true} */
     ]);
 }
 
-export const run = () => {
+export const register = () => {
     registerUserContextMenu();
 }
 
-export default run;
+export default register;

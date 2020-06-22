@@ -90,11 +90,11 @@
 /*!*************************************!*\
   !*** ./src/frontend/contextmenu.js ***!
   \*************************************/
-/*! exports provided: run, default */
+/*! exports provided: register, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"run\", function() { return run; });\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/tui-context-menu */ \"./src/frontend/lib/tui-context-menu.js\");\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst registerUserContextMenu = () => {\n    const container = document.getElementById('fl');\n    const userContextMenu = new _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0___default.a(container);\n    \n    function onClick(e, cmd) {\n        console.log(cmd);\n    }\n    \n    userContextMenu.register('#target', onClick, [\n        {title: 'New Folder'},\n        {\n            title: 'New File',\n            menu: [\n                {title: '20170101.xls'},\n                {title: 'image.png', command: 'export-to-png'},\n                {title: 'image.jpg', command: 'export-to-jpg'}\n            ]\n        },\n        {separator: true},\n        {title: 'Rename'},\n        {title: 'Delete'},\n        {title: 'Copy', disable: true},\n        {title: 'Paste', disable: true}\n    ]);\n}\n\nconst run = () => {\n    registerUserContextMenu();\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (run);\n\n\n//# sourceURL=webpack:///./src/frontend/contextmenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"register\", function() { return register; });\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/tui-context-menu */ \"./src/frontend/lib/tui-context-menu.js\");\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst registerUserContextMenu = () => {\n    const container = document.getElementById('fl');\n    const userContextMenu = new _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0___default.a(container);\n\n    function onClick(e, cmd) {\n        console.log(cmd);\n    }\n\n    userContextMenu.register('#target', onClick, [{\n            title: 'Stummschalten'\n        },\n        {\n            title: 'Einladen',\n            menu: [{\n                    title: 'Sprachkanal',\n                    command: 'invite-voice'\n                },\n                {\n                    title: 'Textkanal',\n                    command: 'invite-text'\n                }\n            ]\n        },\n        {\n            title: 'Blub'\n        }\n        /* {separator: true},\n        {title: 'Rename'},\n        {title: 'Delete'},\n        {title: 'Copy', disable: true},\n        {title: 'Paste', disable: true} */\n    ]);\n}\n\nconst register = () => {\n    registerUserContextMenu();\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (register);\n\n//# sourceURL=webpack:///./src/frontend/contextmenu.js?");
 
 /***/ }),
 
@@ -117,7 +117,7 @@ eval("/*!\n * TOAST UI Context Menu\n * @version 2.1.7\n * @author NHN FE Develo
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _contextmenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contextmenu.js */ \"./src/frontend/contextmenu.js\");\n\n\n_contextmenu_js__WEBPACK_IMPORTED_MODULE_0__[\"run\"]();\n\n//# sourceURL=webpack:///./src/frontend/studtastic.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _contextmenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contextmenu.js */ \"./src/frontend/contextmenu.js\");\n\n\n_contextmenu_js__WEBPACK_IMPORTED_MODULE_0__[\"register\"]();\n\n//# sourceURL=webpack:///./src/frontend/studtastic.js?");
 
 /***/ })
 

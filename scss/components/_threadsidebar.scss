@@ -24,4 +24,12 @@
             margin-bottom: $spacing;
         }
     }
+
+    .voice--controls {
+        display: none;
+    }
+}
+
+body#voice .voice--controls {
+    display: block;
 }
