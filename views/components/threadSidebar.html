@@ -9,6 +9,14 @@
     <ul class="voice-channels">
         <li>Ansprache & Fragerunde</li>
         <li>Laborplatz 1</li>
+        <ul class="channel-users">
+            <li>Arnold Willemer</li>
+            <li>Fabian G.</li>
+            <li>Peter Shawn</li>
+            {% if userIsInChannel %}
+                <li>{{user.username}}</li>
+            {% endif %}
+        </ul>
         <li>Laborplatz 2</li>
         <li>Laborplatz 3</li>
         <li>Laborplatz 4</li>
