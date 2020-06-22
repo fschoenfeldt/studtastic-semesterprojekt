@@ -10,7 +10,6 @@ cd studtastic-semesterprojekt/
 
 # install dependencies
 npm i
-npm i -g nodemon
 
 # starting server (UNIX)
 npm run dev
@@ -23,4 +22,8 @@ npm run build:css
 
 # watch scss
 npm run watch:css
+
+# compile and watch js
+npm run watch:js
+
 ```
