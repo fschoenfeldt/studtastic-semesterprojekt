@@ -2,8 +2,11 @@ import * as model from "./model.mjs";
 import Debug from 'debug';
 const debug = Debug("studtastic-controller");
 
+const admins = ['hiep', 'dozent', 'admin'];
+
 const studtasticObject = {
   user: {
+    isAdmin: false,
     username: null,
     password: null
   },
@@ -35,9 +38,17 @@ export const indexAction = async (ctx) => {
  * @return undefined
  */
 export const loginAction = async (ctx) => {
-  ctx.body = ctx.request.body;
+  const isUserAdmin = admins.some((elem) => {
+    return elem == ctx.request.body.login.username
+  });
+  debug(`is user admin? --> ${isUserAdmin}`);
 
-  ctx.session.studtastic.user = ctx.request.body.login;
+  // ctx.session.studtastic.user = ctx.request.body.login;
+  ctx.session.studtastic.user = {
+    isAdmin: isUserAdmin,
+    ...ctx.request.body.login
+  };
+  debug(ctx.session.studtastic);
 
   ctx.redirect('/overview');
 }
@@ -57,6 +68,13 @@ export const overviewAction = async (ctx) => {
   });
 }
 
+/**
+ * Shows a single channel
+ * @module controller
+ * @function
+ * @param {Object} - the context of koa
+ * @return undefined
+ */
 export const channelAction = async (ctx) => {
   debug(ctx.session.studtastic);
   ctx.session.studtastic.channel.name = ctx.request.query.name;
