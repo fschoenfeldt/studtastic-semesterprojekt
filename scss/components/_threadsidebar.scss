@@ -1,4 +1,6 @@
 .sidebar--threads {
+    border-right: thin solid $grey;
+    padding-right: $spacing;
     ul.voice-channels > li, ul.text-channels > li {
         font-weight: bold;
         margin-bottom: $spacing;

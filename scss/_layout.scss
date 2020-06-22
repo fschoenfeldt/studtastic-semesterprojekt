@@ -39,7 +39,7 @@ body {
         }
         >main {
             display: grid;
-            grid-template-columns: $spacing*5 $spacing*12 auto $spacing*12;
+            grid-template-columns: $spacing*5 $spacing*14 auto $spacing*12;
             grid-column-gap: $spacing;
         }
     }

@@ -1,5 +1,7 @@
 .sidebar--user {
     background-color: $light-grey;
+    border-left: thin solid $grey;
+    padding-left: $spacing;
     
     .user--note {
         text-align: center;
