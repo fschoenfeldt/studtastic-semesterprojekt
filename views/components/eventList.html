@@ -3,12 +3,12 @@
         <li class="event"><span class="event--title">HOME</span></li>
     </a>
     <a href="/channel?name=SPROG">
-        <li class="event"><span class="event--title">SPROG</span></li>
+        <li class="event {% if channel.name == 'SPROG' %}active{% endif %}"><span class="event--title">SPROG</span></li>
     </a>
     <a href="/channel?name=FRONTEND">
-        <li class="event blue active"><span class="event--title">FRON</span></li>
+        <li class="event blue {% if channel.name == 'FRONTEND' %}active{% endif %}"><span class="event--title">FRON</span></li>
     </a>
     <a href="/channel?name=ALGO">
-        <li class="event"><span class="event--title">ALG</span></li>
+        <li class="event {% if channel.name == 'ALGO' %}active{% endif %}"><span class="event--title">ALG</span></li>
     </a>
 </ul>
