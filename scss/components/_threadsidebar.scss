@@ -1,6 +1,14 @@
 .sidebar--threads {
     border-right: thin solid $grey;
     padding-right: $spacing;
+    .channel--status {
+        background: $dark-blue;
+        color: white;
+        text-align: center;
+        padding: $spacing/2;
+        margin-top: -$spacing/2;
+        margin-bottom: $spacing;
+    }
     ul.voice-channels > li, ul.text-channels > li {
         font-weight: bold;
         margin-bottom: $spacing;

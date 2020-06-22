@@ -1,0 +1,44 @@
+div.voice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $dark-grey;
+    margin-left: -$spacing;
+    margin-right: -$spacing;
+    padding-left: $spacing;
+    padding-right: $spacing;
+
+    div.voice--users {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: $spacing;
+
+        >div {
+            height: $spacing*13;
+            width: $spacing*20;
+            background-color: purple;
+            &:nth-child(1) {
+                background: url('/img/voice/1.png') center center no-repeat;
+                background-size: contain;
+            }
+    
+            &:nth-child(2) {
+                background: url('/img/voice/2.png') center center no-repeat;
+                background-size: contain;
+            }
+    
+            &:nth-child(3) {
+                background: url('/img/voice/3.png') center center no-repeat;
+                background-size: contain;
+            }
+    
+            &:nth-child(4) {
+                background: url('/img/voice/4.png') center center no-repeat;
+                background-size: contain;
+            }
+        }
+
+        
+    }
+}

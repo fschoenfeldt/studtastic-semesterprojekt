@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Studtastic: {{channel.name}} - Sprachkanal{% endblock %}
+{% set page = "voice" %}
+{% block content %}
+        {% include "components/channelSidebar.html" %}
+        {% include "components/threadSidebar.html" %}
+        {% include "components/threadVoice.html" %}
+        {% include "components/userList.html" %}
+{% endblock %}
+{% block footer %}
+  {% include "components/indexFooter.html" %}
+{% endblock %}

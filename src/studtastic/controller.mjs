@@ -85,6 +85,30 @@ export const channelAction = async (ctx) => {
   });
 }
 
+/**
+ * Shows a voice thread
+ * @module controller
+ * @function
+ * @param {Object} - the context of koa
+ * @return undefined
+ */
+export const voiceThreadAction = async (ctx) => {
+  debug(ctx.session.studtastic);
+
+  await ctx.render("pages/04-voice-thread", {
+    user: ctx.session.studtastic.user,
+    channel: ctx.session.studtastic.channel,
+    userIsInChannel : true
+  });
+}
+
+/**
+ * Logs out and redirects to the index page
+ * @module controller
+ * @function
+ * @param {Object} - the context of koa
+ * @return undefined
+ */
 export const logoutAction = async (ctx) => {
   ctx.session = null;
   ctx.redirect('/');
