@@ -14,7 +14,10 @@
   {% if not page is defined %}
     {% set page = "page" %}
   {% endif %}
-  <body id="{{page}}">
+  {% if user.isAdmin %}
+    {% set additionalClass = "admin" %}
+  {% endif %}
+  <body id="{{page}}" class="{{additionalClass}}">
     <header>
       {% block header %}{% endblock %}
     </header>

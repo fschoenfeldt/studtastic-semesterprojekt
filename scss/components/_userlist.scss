@@ -2,7 +2,7 @@
     background-color: $light-grey;
     border-left: thin solid $grey;
     padding-left: $spacing;
-    
+
     .user--note {
         text-align: center;
         margin: $spacing;
@@ -11,7 +11,14 @@
         border: thin solid $grey;
         border-radius: $spacing/2;
     }
+
     .users {
         margin: $spacing;
     }
-} 
+}
+
+body.admin {
+    .sidebar--user .user--note {
+        display: none;
+    }
+}
