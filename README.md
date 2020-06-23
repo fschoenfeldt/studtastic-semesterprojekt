@@ -27,3 +27,5 @@ npm run watch:css
 npm run watch:js
 
 ```
+
+Now you can access Studtastic via [localhost:3000](http://localhost:3000)!
