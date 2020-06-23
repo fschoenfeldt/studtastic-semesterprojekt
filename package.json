@@ -7,7 +7,7 @@
         "dev": "DEBUG=studtastic* npx nodemon server",
         "dev:win": "@powershell -Command $env:DEBUG='studtastic*';npx nodemon --experimental-modules server.js",
         "build:css": "cd gulp && npm run build",
-        "watch:css": "cd gulp && npm run dev",
+        "watch:css": "cd gulp && npm run build && npm run dev",
         "watch:js": "npx webpack --config webpack.config.cjs",
         "postinstall": "cd gulp && npm i"
     },
