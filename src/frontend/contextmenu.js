@@ -1,14 +1,7 @@
 import ContextMenu from './lib/tui-context-menu';
 
 const registerUserContextMenu = () => {
-    const container = document.getElementById('fl');
-    const userContextMenu = new ContextMenu(container);
-
-    function onClick(e, cmd) {
-        console.log(cmd);
-    }
-
-    userContextMenu.register('#target', onClick, [{
+    const contextMenuContent = [{
             title: 'Stummschalten'
         },
         {
@@ -22,16 +15,17 @@ const registerUserContextMenu = () => {
                     command: 'invite-text'
                 }
             ]
-        },
-        {
-            title: 'Blub'
         }
-        /* {separator: true},
-        {title: 'Rename'},
-        {title: 'Delete'},
-        {title: 'Copy', disable: true},
-        {title: 'Paste', disable: true} */
-    ]);
+    ]
+   
+    const userContextMenu = new ContextMenu(document.getElementById('sidebar--user__ctx-menu'));
+
+    const users = document.querySelectorAll('div.users > p');
+    users.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));
+
+    function onClick(e, cmd) {
+        console.log(cmd);
+    }
 }
 
 export const register = () => {
