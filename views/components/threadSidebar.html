@@ -12,11 +12,16 @@
             <li>Arnold Willemer</li>
             <li>Fabian G.</li>
             <li>Peter Shawn</li>
-            {% if userIsInChannel %}
+            {% if isInThread == 'voice-public' %}
                 <li>{{user.username}}</li>
             {% endif %}
         </ul>
         <li><a title="Dem Kanal beitreten" href="/thread/voice/private?id=1">Laborplatz 1</a></li>
+        <ul class="channel-users">
+            {% if isInThread == 'voice-private-1' %}
+                <li>{{user.username}}</li>
+            {% endif %}
+        </ul>
         <li>Laborplatz 2</li>
         <li>Laborplatz 3</li>
         <li>Laborplatz 4</li>

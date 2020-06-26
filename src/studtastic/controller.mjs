@@ -8,7 +8,8 @@ const studtasticObject = {
   user: {
     isAdmin: false,
     username: null,
-    password: null
+    password: null,
+    isInThread: null
   },
   channel: {
     name: null,
@@ -44,8 +45,11 @@ export const loginAction = async (ctx) => {
   });
   debug(`is user admin? --> ${isUserAdmin}`);
 
-  // ctx.session.studtastic.user = ctx.request.body.login;
+  // passwort wieder löschen
+  ctx.request.body.login.password = null;
+
   ctx.session.studtastic.user = {
+    ...studtasticObject.user,
     isAdmin: isUserAdmin,
     ...ctx.request.body.login
   };
@@ -100,10 +104,31 @@ export const voiceThreadAction = async (ctx) => {
   if(!ctx.session.studtastic.user.isUserAdmin)
     ctx.session.studtastic.channel.status = 'Ansprache & Fragerunde'
 
+  ctx.session.studtastic.user.isInThread = `voice-public`;
+
   await ctx.render("pages/04-voice-thread", {
     user: ctx.session.studtastic.user,
     channel: ctx.session.studtastic.channel,
-    userIsInChannel : true
+    isInThread : ctx.session.studtastic.user.isInThread 
+  });
+}
+
+/**
+ * Shows a private voice thread
+ * @module controller
+ * @function
+ * @param {Object} - the context of koa
+ * @return undefined
+ */
+export const privateVoiceThreadAction = async (ctx) => {
+  debug(ctx.session.studtastic);
+
+  ctx.session.studtastic.user.isInThread = `voice-private-${ctx.request.query.id}`;
+
+  await ctx.render("pages/05-private-voice-thread", {
+    user: ctx.session.studtastic.user,
+    channel: ctx.session.studtastic.channel,
+    isInThread : ctx.session.studtastic.user.isInThread 
   });
 }
 

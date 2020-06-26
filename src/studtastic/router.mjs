@@ -10,6 +10,7 @@ router.post('/loginAction', controller.loginAction);
 router.get('/overview', controller.overviewAction);
 router.get('/channel', controller.channelAction);
 router.get('/thread/voice', controller.voiceThreadAction);
+router.get('/thread/voice/private', controller.privateVoiceThreadAction);
 router.get('/logout', controller.logoutAction);
 // router.get('/bookmark/add', formController.add);
 // router.post('/bookmark/add', formController.submitForm);
