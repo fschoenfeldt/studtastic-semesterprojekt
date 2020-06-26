@@ -10,7 +10,12 @@
         <div id="sidebar--user__ctx-menu"></div>
 
         <strong>Doziernde</strong>
-        <p id="user-1">Arnold Willemer</p>
+        {% if user.isAdmin %}
+            <p id="user-1">{{user.username}}</p>
+        {% else %}
+            <p id="user-1">Arnold Willemer</p>
+        {% endif %}
+
 
         <strong>Tutorierende</strong>
         <p id="user-2">Fabian G.</p>
@@ -24,6 +29,10 @@
         <p id="user-8">Andreas Sagasi</p>
         <p id="user-9">Peter Humboldt</p>
         <p id="user-10">Peter Pan</p>
-        <p id="user-11">Sabine Lustig</p>
+        {% if not user.isAdmin %}
+            <p id="user-11">{{user.username}}</p>
+        {% else %}
+            <p id="user-11">Sabine Lustig</p>
+        {% endif %}
     </div>
 </div>

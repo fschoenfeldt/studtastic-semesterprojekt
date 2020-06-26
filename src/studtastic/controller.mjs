@@ -11,7 +11,8 @@ const studtasticObject = {
     password: null
   },
   channel: {
-    name: null
+    name: null,
+    status: 'Warten auf Beginn der Veranstaltung'
   }
 }
 
@@ -94,6 +95,10 @@ export const channelAction = async (ctx) => {
  */
 export const voiceThreadAction = async (ctx) => {
   debug(ctx.session.studtastic);
+
+  // Als Student: Veranstaltungsstatus auf "Ansprache" setzen
+  if(!ctx.session.studtastic.user.isUserAdmin)
+    ctx.session.studtastic.channel.status = 'Ansprache & Fragerunde'
 
   await ctx.render("pages/04-voice-thread", {
     user: ctx.session.studtastic.user,

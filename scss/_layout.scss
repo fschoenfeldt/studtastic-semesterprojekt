@@ -16,9 +16,8 @@ body {
     grid-template-rows: $spacing*8 auto $spacing*3;
     grid-row-gap: $spacing;
 
-    >main {
-        // display: grid;
-        // grid-template-rows: $spacing*4 auto;
+    footer {
+        display: none;
     }
 
     &#index, &#overview {
@@ -30,10 +29,14 @@ body {
         >header {
             display: flex;
         }
+
+        >footer {
+            display: block;
+        }
     }
 
     &#channel, &#voice {
-        grid-template-rows: auto $spacing*3;
+        grid-template-rows: auto;
         >header {
             display: none;
         }
