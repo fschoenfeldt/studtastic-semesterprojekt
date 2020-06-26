@@ -9,12 +9,23 @@
         padding: $spacing/2;
         margin-top: -$spacing/2;
         margin-bottom: $spacing;
+
+        h2 { margin: 0 }
     }
+
+    h2 {
+        margin: $spacing 0;
+    }  
 
     ul.voice-channels>li,
     ul.text-channels>li {
         font-weight: bold;
         margin-bottom: $spacing;
+
+        a {
+            color: $dark-grey;
+            font-weight: bold;
+        }
     }
 
     .channel-users * {

@@ -17,3 +17,26 @@ h5 {
     font-weight: 300;
     font-style: normal;
 }
+
+/**
+    Font utilitites 
+**/
+.color-grey {
+    color: $dark-grey !important;
+}
+
+.hover {
+    opacity: 1;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.no-underline {
+    text-decoration: none;
+}

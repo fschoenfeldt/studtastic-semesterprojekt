@@ -1,11 +1,11 @@
 <div class="sidebar--threads">
-    <h1 class="channel--title">{{channel.name}}</h1>
+    <a class="color-grey hover no-underline" href="/channel?name={{channel.name}}"><h1 class="channel--title">{{channel.name}}</h1></a>
     <div class="channel--status">
         <small>Status d. Veranstaltung</small>
         <h2 class="channel--status_title">{{ channel.status }}</h2>
     </div>
 
-    <h2>Kanäle</h2>
+    <h2>Sprachkanäle</h2>
     <ul class="voice-channels">
         <li><a title="Dem Kanal beitreten" href="/thread/voice">Ansprache & Fragerunde</a></li>
         <ul class="channel-users">
@@ -16,12 +16,13 @@
                 <li>{{user.username}}</li>
             {% endif %}
         </ul>
-        <li>Laborplatz 1</li>
+        <li><a title="Dem Kanal beitreten" href="/thread/voice/private?id=1">Laborplatz 1</a></li>
         <li>Laborplatz 2</li>
         <li>Laborplatz 3</li>
         <li>Laborplatz 4</li>
         <li>Einzelbesprechung</li>
     </ul>
+    <h2>Textkanäle</h2>
     <ul class="text-channels">
         <li>Ansprache & Fragerunde</li>
         <li>Laborplatz 1</li>
