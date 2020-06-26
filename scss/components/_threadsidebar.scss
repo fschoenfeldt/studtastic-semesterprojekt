@@ -59,6 +59,11 @@
                 border: thin solid $grey;
                 border-radius: $spacing/2;
 
+                a {
+                    display: flex;
+                    padding: $spacing/4;
+                }
+
                 &:first-child {
                     grid-row: 1;
                     grid-column: 4;
