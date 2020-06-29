@@ -1,11 +1,11 @@
 <div class="chat">
     <div class="chat--messages">
-    
+        {% include "components/snippets/threadChat_messages.html" %}
     </div>
     <div class="chat--input">
         <div class="topbar">
-            <span>:)</span>
-            <span>datei</span>
+            <span><a title="Emoji senden" href=""><img alt="Emoji senden Icon" src="/img/ui/smile.svg"></a></span>
+            <span><a title="Anhang senden" href=""><img alt="Anhang senden Icon" src="/img/ui/clip.svg"></a></span>
         </div>
         <textarea name="message" id="chat-iput" cols="30" rows="10" placeholder="Schreibe eine Nachricht..."></textarea>
     </div>

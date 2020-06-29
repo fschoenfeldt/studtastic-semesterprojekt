@@ -2,17 +2,24 @@
     display: grid;
     grid-template-rows: auto $spacing*8;
 
+    // Nachrichten
+    .chat--messages {
+        
+    }
+
     .chat--input {
         padding: $spacing;
         border: solid $grey;
         border-radius: $spacing*2;
 
+        // Topbar (Anhang, Emoji senden)
         .topbar {
             span {
                 background: $grey;
             }
         } 
 
+        // Eingabefeld Nachricht
         >textarea {
             width: 100%;
             height: $spacing*4;

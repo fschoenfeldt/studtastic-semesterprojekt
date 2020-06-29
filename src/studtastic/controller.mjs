@@ -1,5 +1,7 @@
-import * as model from "./model.mjs";
+// import * as model from "./model.mjs";
 import Debug from 'debug';
+import {defaultChatMessages} from './helper/messages.js';
+
 const debug = Debug("studtastic-controller");
 
 const admins = ['hiep', 'dozent', 'admin'];
@@ -86,7 +88,8 @@ export const channelAction = async (ctx) => {
 
   await ctx.render("pages/03-channel", {
     user: ctx.session.studtastic.user,
-    channel: ctx.session.studtastic.channel
+    channel: ctx.session.studtastic.channel,
+    messages: defaultChatMessages
   });
 }
 
