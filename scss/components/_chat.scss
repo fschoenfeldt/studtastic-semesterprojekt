@@ -4,7 +4,14 @@
 
     // Nachrichten
     .chat--messages {
-        
+        margin-top: $spacing;
+
+        .message {
+            margin: $spacing/2 0;
+            > small {
+                color: $dark-grey;
+            } 
+        }
     }
 
     .chat--input {
@@ -14,10 +21,10 @@
 
         // Topbar (Anhang, Emoji senden)
         .topbar {
-            span {
-                background: $grey;
+            span img {
+                height: 1.5rem;
             }
-        } 
+        }
 
         // Eingabefeld Nachricht
         >textarea {
