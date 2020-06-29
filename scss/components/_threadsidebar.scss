@@ -1,4 +1,5 @@
 .sidebar--threads {
+    display: grid;
     border-right: thin solid $grey;
     padding-right: $spacing;
 
@@ -42,7 +43,7 @@
     }
 
     .voice--controls {
-        display: none;
+        visibility: hidden; // hidden for grid, it's easier
         margin-top: $spacing*2;
 
         .controls {
@@ -85,5 +86,5 @@
 }
 
 body#voice .voice--controls {
-    display: block;
+    visibility: visible;
 }
