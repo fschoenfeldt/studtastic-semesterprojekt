@@ -8,29 +8,39 @@
 
         .message {
             margin: $spacing/2 0;
-            > small {
+
+            >small {
                 color: $dark-grey;
-            } 
+            }
         }
     }
 
     .chat--input {
         padding: $spacing;
-        border: solid $grey;
+        padding-top: $spacing/2;
+        margin-bottom: $spacing;
+        border: thin solid $grey;
         border-radius: $spacing*2;
 
         // Topbar (Anhang, Emoji senden)
         .topbar {
+            border-bottom: thin solid $grey;
+            margin-left: -$spacing;
+            margin-right: -$spacing;
+            padding-left: $spacing;
+            padding-right: $spacing;
+
             span img {
                 height: 1.5rem;
             }
         }
 
         // Eingabefeld Nachricht
-        >textarea {
+        #chatInput>textarea {
             width: 100%;
-            height: $spacing*4;
+            height: $spacing*3;
             resize: none;
+            border: none;
         }
     }
 }

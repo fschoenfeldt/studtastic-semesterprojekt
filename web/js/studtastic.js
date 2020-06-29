@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/frontend/chat.js":
+/*!******************************!*\
+  !*** ./src/frontend/chat.js ***!
+  \******************************/
+/*! exports provided: register, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"register\", function() { return register; });\n/* harmony import */ var _lib_querySelector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/querySelector */ \"./src/frontend/lib/querySelector.js\");\n\n\n// https://stackoverflow.com/a/49389811\nconst submitTextareaOnSubmit = (event) => {\n    if (event.which === 13 && !event.shiftKey) {\n        event.target.form.dispatchEvent(new Event(\"submit\", {\n            cancelable: true\n        }));\n        event.preventDefault(); // Prevents the addition of a new line in the text field (not needed in a lot of cases)\n        console.log(event.target.value);\n        alert(`Deine Nachricht: ${event.target.value}\n        (Füg mich in den Chat ein)`);\n\n\n        const chatMessagesContainer = Object(_lib_querySelector__WEBPACK_IMPORTED_MODULE_0__[\"$\"])('.chat--messages');\n        /* chatMessagesContainer.appendChild(createChatMessage({\n            time: \"jetzt\",\n            author: \"ich\",\n            text: event.target.value\n        })); */\n        console.table(chatMessagesContainer)\n        event.target.value = \"\";\n    }\n}\n\nconst createChatMessage = ({\n    time,\n    author,\n    text\n}) => {\n    // !TODO write function for creating DOM element here\n    // https://developer.mozilla.org/de/docs/Web/API/Document/createElement\n    /*\n    \n    <div class=\"message\">\n        <small>{{message.time}} von {{message.author}}</small>\n        <p>{{message.text}}</p>\n    </div>\n    \n    */\n}\n\nconst register = () => {\n    Object(_lib_querySelector__WEBPACK_IMPORTED_MODULE_0__[\"$\"])(\"#chatMessage\").addEventListener(\"keypress\", submitTextareaOnSubmit);\n    Object(_lib_querySelector__WEBPACK_IMPORTED_MODULE_0__[\"$\"])(\"#chatInput\").addEventListener(\"submit\", (event) => {\n        event.preventDefault();\n    });\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (submitTextareaOnSubmit);\n\n//# sourceURL=webpack:///./src/frontend/chat.js?");
+
+/***/ }),
+
 /***/ "./src/frontend/contextmenu.js":
 /*!*************************************!*\
   !*** ./src/frontend/contextmenu.js ***!
@@ -94,7 +106,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"register\", function() { return register; });\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/tui-context-menu */ \"./src/frontend/lib/tui-context-menu.js\");\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst registerUserContextMenu = () => {\n    // Kontextmenü-Einstellungen\n    const contextMenuContent = [{\n            title: 'Stummschalten'\n        },\n        {\n            title: 'Einladen',\n            menu: [{\n                    title: 'Sprachkanal',\n                    command: 'invite-voice'\n                },\n                {\n                    title: 'Textkanal',\n                    command: 'invite-text'\n                }\n            ]\n        }\n    ]\n\n    // Kontextmenü finden und einstellen\n    const userContextMenu = new _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_0___default.a(document.getElementById('sidebar--user__ctx-menu'));\n\n    // Benutzer finden und Kontextmenü bei Klick dort anzeigen lassen\n    const users = document.querySelectorAll('div.users > p');\n    users.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));\n\n    // Hier könnte man beim Klick je nach cmd tolle Dinge machen\n    function onClick(e, cmd) {\n        console.log(cmd);\n    }\n}\n\nconst register = () => {\n    registerUserContextMenu();\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (register);\n\n//# sourceURL=webpack:///./src/frontend/contextmenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"register\", function() { return register; });\n/* harmony import */ var _lib_querySelector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/querySelector */ \"./src/frontend/lib/querySelector.js\");\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/tui-context-menu */ \"./src/frontend/lib/tui-context-menu.js\");\n/* harmony import */ var _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconst registerUserContextMenu = () => {\n    // Kontextmenü-Einstellungen\n    const contextMenuContent = [{\n            title: 'Stummschalten'\n        },\n        {\n            title: 'Einladen',\n            menu: [{\n                    title: 'Sprachkanal',\n                    command: 'invite-voice'\n                },\n                {\n                    title: 'Textkanal',\n                    command: 'invite-text'\n                }\n            ]\n        }\n    ]\n\n    // Kontextmenü finden und einstellen\n    const userContextMenu = new _lib_tui_context_menu__WEBPACK_IMPORTED_MODULE_1___default.a(Object(_lib_querySelector__WEBPACK_IMPORTED_MODULE_0__[\"$\"])('#sidebar--user__ctx-menu'));\n\n    // Benutzer finden und Kontextmenü bei Klick dort anzeigen lassen\n    const users = Object(_lib_querySelector__WEBPACK_IMPORTED_MODULE_0__[\"$$\"])('div.users > p');\n    users.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));\n\n    // Hier könnte man beim Klick je nach cmd tolle Dinge machen\n    function onClick(e, cmd) {\n        console.log(cmd);\n    }\n}\n\nconst register = () => {\n    registerUserContextMenu();\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (register);\n\n//# sourceURL=webpack:///./src/frontend/contextmenu.js?");
+
+/***/ }),
+
+/***/ "./src/frontend/lib/querySelector.js":
+/*!*******************************************!*\
+  !*** ./src/frontend/lib/querySelector.js ***!
+  \*******************************************/
+/*! exports provided: $, $$, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"$\", function() { return $; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"$$\", function() { return $$; });\n// https://developer.mozilla.org/en-US/docs/Archive/Add-ons/Code_snippets/QuerySelector\nconst $ = (selector, el) => {\n    if (!el) {el = document;}\n    return el.querySelector(selector);\n}\nconst $$ = (selector, el) => {\n    if (!el) {el = document;}\n    return el.querySelectorAll(selector);\n    // Note: the returned object is a NodeList.\n    // If you'd like to convert it to a Array for convenience, use this instead:\n    // return Array.prototype.slice.call(el.querySelectorAll(selector));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ($);\n\n//# sourceURL=webpack:///./src/frontend/lib/querySelector.js?");
 
 /***/ }),
 
@@ -117,7 +141,7 @@ eval("/*!\n * TOAST UI Context Menu\n * @version 2.1.7\n * @author NHN FE Develo
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _contextmenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contextmenu.js */ \"./src/frontend/contextmenu.js\");\n\n\n_contextmenu_js__WEBPACK_IMPORTED_MODULE_0__[\"register\"]();\n\n//# sourceURL=webpack:///./src/frontend/studtastic.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _contextmenu_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contextmenu.js */ \"./src/frontend/contextmenu.js\");\n/* harmony import */ var _chat_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chat.js */ \"./src/frontend/chat.js\");\n\n\n\n_contextmenu_js__WEBPACK_IMPORTED_MODULE_0__[\"register\"]();\n_chat_js__WEBPACK_IMPORTED_MODULE_1__[\"register\"]();\n\n//# sourceURL=webpack:///./src/frontend/studtastic.js?");
 
 /***/ })
 
