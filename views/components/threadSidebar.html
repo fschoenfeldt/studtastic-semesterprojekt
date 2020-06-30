@@ -13,10 +13,10 @@
                 <li>{{user.username}}</li>
             {% endif %}
             {% if not user.isAdmin %}
-                <li>Arnold Willemer</li>
+                <li id="sidebar-user-1">Arnold Willemer</li>
             {% endif %}
-            <li>Fabian G.</li>
-            <li>Peter Shaw</li>
+            <li id="sidebar-user-2">Fabian G.</li>
+            <li id="sidebar-user-3">Peter Shaw</li>
             {% if isInThread == 'voice-public' and not user.isAdmin %}
                 <li>{{user.username}}</li>
             {% endif %}
@@ -24,7 +24,8 @@
         <li><a title="Dem Kanal beitreten" href="/thread/voice/private?id=1">Laborplatz 1</a></li>
         <ul class="channel-users">
             {% if isInThread == 'voice-private-1' %}
-                <li>{{user.username}}</li>
+                <li id="sidebar-user-4">Peter Shaw</li>
+                <li id="sidebar-user-5">{{user.username}}</li>
             {% endif %}
         </ul>
         <li>Laborplatz 2</li>
