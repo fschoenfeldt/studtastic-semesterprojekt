@@ -25,8 +25,11 @@
         <li><a title="Dem Kanal beitreten" href="/thread/voice/private?id=1">Laborplatz 1</a></li>
         <ul class="channel-users">
             {% if isInThread == 'voice-private-1' %}
-                <li id="sidebar-user-4">Peter Shaw</li>
+                <li id="sidebar-user-4">Sabine Lustig</li>
                 <li id="sidebar-user-5">{{user.username}}</li>
+            {% endif %}
+            {% if showPseudoStudent %}
+                <li id="sidebar-user-6">Sabine Lustig</li>
             {% endif %}
         </ul>
         <li>Laborplatz 2</li>

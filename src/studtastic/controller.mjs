@@ -98,21 +98,25 @@ export const channelAction = async (ctx) => {
  * @module controller
  * @function
  * @param {Object} - the context of koa
- * @return undefined
+ * @return undefined+
  */
 export const voiceThreadAction = async (ctx) => {
+  let showPseudoStudent = false;
   debug(ctx.session.studtastic);
 
   // Als Student: Veranstaltungsstatus auf "Ansprache" setzen
   if(!ctx.session.studtastic.user.isAdmin)
     ctx.session.studtastic.channel.status = 'Ansprache & Fragerunde'
+  else
+    showPseudoStudent = true;
 
   ctx.session.studtastic.user.isInThread = `voice-public`;
 
   await ctx.render("pages/04-voice-thread", {
     user: ctx.session.studtastic.user,
     channel: ctx.session.studtastic.channel,
-    isInThread : ctx.session.studtastic.user.isInThread 
+    isInThread : ctx.session.studtastic.user.isInThread ,
+    showPseudoStudent : showPseudoStudent
   });
 }
 

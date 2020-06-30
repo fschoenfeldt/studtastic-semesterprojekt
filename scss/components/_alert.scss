@@ -1,0 +1,15 @@
+.alert {
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $spacing*2;
+    color: white;
+    background-color: $orange;
+    >* {
+        color: white !important;
+        margin: 0 $spacing;
+    }
+}

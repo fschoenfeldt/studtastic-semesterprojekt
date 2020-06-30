@@ -84,7 +84,6 @@ const onClick = (e, cmd) => {
             break;
         case '4':
             setChannelStatus('Eigenverantwortlicher Lernanteil');
-            // !TODO !IMPORTANT einen weiteren nutzer hier hinzufügen
             break;
     }
 }
