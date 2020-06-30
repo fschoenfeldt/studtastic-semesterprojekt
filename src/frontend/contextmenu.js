@@ -7,7 +7,8 @@ import ContextMenu from './lib/tui-context-menu';
 const registerUserContextMenu = () => {
     // Kontextmenü-Einstellungen
     const contextMenuContent = [{
-            title: 'Stummschalten'
+            title: 'Stummschalten',
+            command: 'mute'
         },
         {
             title: 'Einladen',
@@ -33,6 +34,11 @@ const registerUserContextMenu = () => {
     // Hier könnte man beim Klick je nach cmd tolle Dinge machen
     function onClick(e, cmd) {
         console.log(cmd);
+        switch(cmd) {
+            case 'mute':
+                alert('ist jetzt stummgeschaltet');
+                break;
+        }
     }
 }
 
