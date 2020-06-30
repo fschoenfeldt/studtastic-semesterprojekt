@@ -38,7 +38,6 @@ export const defaultChatMessages = [{
         author: 'Fabian Knöller',
         text: 'Ich möchte gerne ein Element auf der Seite zentrieren. Habe auf YouTube den <center>-Tag gesehen. Ist das gut?'
     }
-    // !TODO more messages
 ];
 
 export default defaultChatMessages;

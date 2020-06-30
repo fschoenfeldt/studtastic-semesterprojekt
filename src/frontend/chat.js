@@ -33,18 +33,6 @@ const submitTextareaOnSubmit = (event) => {
 }
 
 const createChatMessage = (message) => {
-    // !TODO write function for creating DOM element here
-    // https://developer.mozilla.org/de/docs/Web/API/Document/createElement
-    /*
-    
-    <div class="message">
-        <small>{{message.time}} von {{message.author}}</small>
-        <p>{{message.text}}</p>
-    </div>
-    
-    */
-
-
     let messageElement = create({
         selector: 'div',
         styles: 'message',

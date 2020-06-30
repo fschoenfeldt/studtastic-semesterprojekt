@@ -31,7 +31,7 @@ const registerUserContextMenu = () => {
     const usersUserSidebar = $$('div.users > p');
     usersUserSidebar.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));
     
-    const usersThreadSidebar = ['#sidebar-user-1', '#sidebar-user-2', '#sidebar-user-3', '#sidebar-user-4', '#sidebar-user-5']
+    const usersThreadSidebar = ['#sidebar-user-1', '#sidebar-user-2', '#sidebar-user-3', '#sidebar-user-4', '#sidebar-user-5', '#sidebar-user-6']
     usersThreadSidebar.forEach((selector) => {
         const threadSidebarUser = $(selector);
         if (threadSidebarUser)
@@ -84,6 +84,9 @@ const onClick = (e, cmd) => {
             break;
         case '4':
             setChannelStatus('Eigenverantwortlicher Lernanteil');
+            $$('.user-pseudo-student').forEach((elem) => {
+                elem.classList.add('note-active');
+            });
             break;
     }
 }

@@ -26,16 +26,12 @@ const showWebCam = (event) => {
 
 const showScreenSharing = (event) => {
     event.preventDefault();
-
-    // !TODO !IMPORTANT display screensharing here
-    alert('Dein Bildschirm wird freigegeben..');
+    alert('Dein Bildschirm wird zusätzlich zu deiner Kamera freigegeben..');
 }
 
 const showCodeSharing = (event) => {
     event.preventDefault();
-
-    // !TODO !IMPORTANT display codesharing here
-    alert('Dein Editor wird freigegeben..');
+    alert('Die Nutzer in deinem Kanal wurden benachrichtigt, dass du deinen Code-Editor freigeben möchtest.');
 }
 
 export const register = () => {

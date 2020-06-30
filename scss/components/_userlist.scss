@@ -15,24 +15,25 @@
     .users {
         margin: $spacing;
     }
-
-    .note-active {
-        color: $blue;
-        font-weight: bold;
-        &:before {
-            display: inline-block;
-            content : '';
-            height: 1rem;
-            width: 1rem;
-            margin-right: $spacing/4;
-            background: url('/img/ui/smile.svg') center center no-repeat;
-            background-size: contain;
-        }
-    }
 }
 
 body.admin {
     .sidebar--user .user--note {
         display: none;
+    }
+}
+
+.note-active {
+    color: $blue;
+    font-weight: bold;
+
+    &:before {
+        display: inline-block;
+        content: '✋';
+        height: 1rem;
+        width: 1rem;
+        margin-right: $spacing/4;
+        /* background: url('/img/ui/smile.svg') center center no-repeat;
+        background-size: contain; */
     }
 }
