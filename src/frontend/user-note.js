@@ -12,7 +12,7 @@ const showUserNote = () => {
     if (userNoteButton) {
         userNoteButton.addEventListener("click", (event) => {
             currentUser.classList.toggle('note-active');
-            if (voiceChatContainer && voiceChatContainer.childElementCount == 1) {
+            if (voiceChatContainer && voiceChatContainer.childElementCount == 2) {
                 // add one person to voice channel
                 $('.voice--users').appendChild(document.createElement("div"));
             } else {
