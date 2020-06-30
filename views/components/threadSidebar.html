@@ -1,9 +1,10 @@
 <div class="sidebar--threads">
     <a class="color-grey hover no-underline" href="/channel?name={{channel.name}}"><h1 class="channel--title">{{channel.name}}</h1></a>
-    <div class="channel--status">
+    <div class="channel--status" id="channel--status">
         <small>Status d. Veranstaltung</small>
         <h2 class="channel--status_title">{{ channel.status }}</h2>
     </div>
+    <div id="threadsidebar--status__ctx-menu"></div>
 
     <h2>Sprachkanäle</h2>
     <ul class="voice-channels">

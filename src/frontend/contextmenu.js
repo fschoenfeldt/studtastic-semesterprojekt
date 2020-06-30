@@ -37,16 +37,6 @@ const registerUserContextMenu = () => {
         if (threadSidebarUser)
             userContextMenu.register(`#${threadSidebarUser.id}`, onClick, contextMenuContent)
     });
-    
-    // Hier könnte man beim Klick je nach cmd tolle Dinge machen
-    function onClick(e, cmd) {
-        console.log(cmd);
-        switch (cmd) {
-            case 'mute':
-                alert('ist jetzt stummgeschaltet');
-                break;
-        }
-    }
 }
 
 const registerStatusContextMenu = () => {
@@ -70,24 +60,37 @@ const registerStatusContextMenu = () => {
     ]
 
     // Kontextmenü finden und einstellen
-    const userContextMenu = new ContextMenu($('#sidebar--user__ctx-menu'));
+    const statusContextMenu = new ContextMenu($('#threadsidebar--status__ctx-menu'));
 
-    // Benutzer finden und Kontextmenü bei Klick dort anzeigen lassen
-    const usersUserSidebar = $$('div.users > p');
-    // !TODO !IMPORTANT Außerdem User in der Threadsidebar benutzen!
-    // const usersThreadSidebar
-    usersUserSidebar.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));
+    statusContextMenu.register('#channel--status', onClick, contextMenuContent)
+}
 
-    // Hier könnte man beim Klick je nach cmd tolle Dinge machen
-    function onClick(e, cmd) {
-        // !TODO !IMPORTANT implement
-        console.log(cmd);
-        switch (cmd) {
-            case 'mute':
-                alert('ist jetzt stummgeschaltet');
-                break;
-        }
+// Hier könnte man beim Klick je nach cmd tolle Dinge machen
+const onClick = (e, cmd) => {
+    console.log(cmd);
+    switch (cmd) {
+        case 'mute':
+            alert('ist jetzt stummgeschaltet');
+            break;
+        
+        case '1':
+            setChannelStatus('Warten auf Beginn der Veranstaltung')
+            break;
+        case '2':
+            setChannelStatus('Ansprache');
+            break;
+        case '3':
+            setChannelStatus('Offene Fragerunde');
+            break;
+        case '4':
+            setChannelStatus('Eigenverantwortlicher Lernanteil');
+            // !TODO !IMPORTANT einen weiteren nutzer hier hinzufügen
+            break;
     }
+}
+
+const setChannelStatus = (status) => {
+    $('.channel--status_title').innerHTML = status;
 }
 
 export const register = () => {

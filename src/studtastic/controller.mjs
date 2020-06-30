@@ -128,6 +128,10 @@ export const privateVoiceThreadAction = async (ctx) => {
 
   ctx.session.studtastic.user.isInThread = `voice-private-${ctx.request.query.id}`;
 
+  if(ctx.session.studtastic.user.isAdmin) {
+    ctx.session.studtastic.channel.status = 'Eigenverantwortlicher Lernanteil';
+  }
+
   await ctx.render("pages/05-private-voice-thread", {
     user: ctx.session.studtastic.user,
     channel: ctx.session.studtastic.channel,
