@@ -28,8 +28,10 @@ const registerUserContextMenu = () => {
     const userContextMenu = new ContextMenu($('#sidebar--user__ctx-menu'));
 
     // Benutzer finden und Kontextmenü bei Klick dort anzeigen lassen
-    const users = $$('div.users > p');
-    users.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));
+    const usersUserSidebar = $$('div.users > p');
+    // !TODO !IMPORTANT Außerdem User in der Threadsidebar benutzen!
+    // const usersThreadSidebar
+    usersUserSidebar.forEach((elem) => userContextMenu.register(`#${elem.id}`, onClick, contextMenuContent));
 
     // Hier könnte man beim Klick je nach cmd tolle Dinge machen
     function onClick(e, cmd) {
