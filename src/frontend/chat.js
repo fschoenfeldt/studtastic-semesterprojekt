@@ -16,7 +16,8 @@ const submitTextareaOnSubmit = (event) => {
 
 
         const chatMessagesContainer = $('.chat--messages');
-        /* chatMessagesContainer.appendChild(createChatMessage({
+        /* !TODO
+        chatMessagesContainer.appendChild(createChatMessage({
             time: "jetzt",
             author: "ich",
             text: event.target.value
@@ -44,10 +45,12 @@ const createChatMessage = ({
 }
 
 export const register = () => {
-    $("#chatMessage").addEventListener("keypress", submitTextareaOnSubmit);
-    $("#chatInput").addEventListener("submit", (event) => {
-        event.preventDefault();
-    });
+    if ($("#chatMessage") && $("#chatInput")) {
+        $("#chatMessage").addEventListener("keypress", submitTextareaOnSubmit);
+        $("#chatInput").addEventListener("submit", (event) => {
+            event.preventDefault();
+        });
+    }
 }
 
 export default submitTextareaOnSubmit;

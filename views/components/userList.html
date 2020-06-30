@@ -1,5 +1,5 @@
 <div class="sidebar--user">
-    <a href>
+    <a href="#" id="link-note">
         <div class="user--note">
             <p><i class="icon">✋</i> Meldung</p>
             {# <p>niemand</p> #}
@@ -11,7 +11,7 @@
 
         <strong>Doziernde</strong>
         {% if user.isAdmin %}
-            <p id="user-1">{{user.username}}</p>
+            <p class="current-user" id="user-1">{{user.username}}</p>
         {% else %}
             <p id="user-1">Arnold Willemer</p>
         {% endif %}
@@ -30,7 +30,7 @@
         <p id="user-9">Peter Humboldt</p>
         <p id="user-10">Peter Pan</p>
         {% if not user.isAdmin %}
-            <p id="user-11">{{user.username}}</p>
+            <p class="current-user" id="user-11">{{user.username}}</p>
         {% else %}
             <p id="user-11">Sabine Lustig</p>
         {% endif %}
