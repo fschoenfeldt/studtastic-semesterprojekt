@@ -37,14 +37,5 @@
         <li>Laborplatz 2</li>
     </ul>
 
-    <div class="voice--controls">
-        <ul class="controls">
-            <li class="control"><a title="Sprachkanal verlassen" href="/channel?name={{channel.name}}"><img alt="Anruf beenden Icon" src="/img/ui/call_end.svg"></a></li>
-            <hr>
-            <li class="control"><a title="Mikrofon stummschalten" href=""><img src="/img/ui/mute.svg" alt="Mikrofon stummschalten Icon"></a></li>
-            <li class="control"><a title="Kamera ausschalten" href=""><img src="/img/ui/cam_off.svg" alt="Kamera ausschalten Icon"></a></li>
-            <li class="control"><a title="Meinen Bildschirm freigeben" href=""><img src="/img/ui/screen_share.svg" alt="Meinen Bildschirm freigeben Icon"></a></li>
-            <li class="control"><a title="Meinen Code-Editor freigeben" href=""><img src="/img/ui/coding.svg" alt="Meinen Code-Editor freigeben Icon"></a></li>
-        </ul>
-    </div>
+    {% include "components/snippets/voiceControls.html" %}
 </div>
