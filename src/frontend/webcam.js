@@ -22,6 +22,10 @@ export const startVideo = (selector) => {
     }
 }
 
+/**
+ * Stops the video with provided selector
+ * @param {String} selector 
+ */
 export const stopVideo = (selector) => {
     const video = document.querySelector(selector);
 
