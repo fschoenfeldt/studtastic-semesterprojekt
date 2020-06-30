@@ -104,7 +104,7 @@ export const voiceThreadAction = async (ctx) => {
   debug(ctx.session.studtastic);
 
   // Als Student: Veranstaltungsstatus auf "Ansprache" setzen
-  if(!ctx.session.studtastic.user.isUserAdmin)
+  if(!ctx.session.studtastic.user.isAdmin)
     ctx.session.studtastic.channel.status = 'Ansprache & Fragerunde'
 
   ctx.session.studtastic.user.isInThread = `voice-public`;
