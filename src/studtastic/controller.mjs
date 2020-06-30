@@ -4,7 +4,7 @@ import {defaultChatMessages} from './helper/messages.js';
 
 const debug = Debug("studtastic-controller");
 
-const admins = ['hiep', 'dozent', 'admin'];
+const admins = ['thiep', 'hiep', 'dozent', 'admin'];
 
 const studtasticObject = {
   user: {
