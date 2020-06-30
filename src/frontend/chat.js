@@ -16,7 +16,7 @@ const submitTextareaOnSubmit = (event) => {
 
 
         const chatMessagesContainer = $('.chat--messages');
-        /* !TODO
+        /* !TODO !IMPORTANT actually insert Chatmessage to chat
         chatMessagesContainer.appendChild(createChatMessage({
             time: "jetzt",
             author: "ich",

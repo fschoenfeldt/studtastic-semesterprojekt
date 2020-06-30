@@ -24,7 +24,7 @@ const showScreenSharing = (event) => {
 const showCodeSharing = (event) => {
     event.preventDefault();
 
-    // !TODO !IMPORTANT display screensharing here
+    // !TODO !IMPORTANT display codesharing here
     alert('Dein Editor wird freigegeben..');
 }
 
