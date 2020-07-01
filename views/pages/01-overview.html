@@ -6,8 +6,9 @@
 {% set page = "overview" %}
 {% block content %}
     <div class="eventselection">
-        <h1>Bitte wähle Deine Veranstaltung</h1>
         {% include "components/eventList.html" %}
+        <h1>Bitte wähle eine Veranstaltung</h1>
+        <p class="color-grey">Studtastic wird sich deine Auswahl merken und dich nächstes mal direkt in die letzte Veranstaltung einloggen</p>
     </div>
 {% endblock %}
 {% block footer %}

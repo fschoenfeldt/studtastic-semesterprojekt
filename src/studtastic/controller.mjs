@@ -1,6 +1,8 @@
 // import * as model from "./model.mjs";
 import Debug from 'debug';
-import {defaultChatMessages} from './helper/messages.js';
+import {
+  defaultChatMessages
+} from './helper/messages.js';
 
 const debug = Debug("studtastic-controller");
 
@@ -27,6 +29,11 @@ const studtasticObject = {
  * @return undefined
  */
 export const indexAction = async (ctx) => {
+  // !TODO redirect to last server if logged in
+  /* if (ctx.session.studtastic) {
+
+  } */
+
   ctx.session.studtastic = studtasticObject;
   await ctx.render("pages/00-index", {
     user: ctx.session.studtastic.user,
@@ -69,10 +76,19 @@ export const loginAction = async (ctx) => {
  */
 export const overviewAction = async (ctx) => {
   debug(ctx.session.studtastic)
-  await ctx.render("pages/01-overview", {
-    user: ctx.session.studtastic.user,
-    channel: ctx.session.studtastic.channel
-  });
+
+  if (ctx.session.studtastic.channel.name) {
+    await ctx.render("pages/03-channel", {
+      user: ctx.session.studtastic.user,
+      channel: ctx.session.studtastic.channel,
+      messages: defaultChatMessages
+    });
+  } else {
+    await ctx.render("pages/01-overview", {
+      user: ctx.session.studtastic.user,
+      channel: ctx.session.studtastic.channel
+    });
+  }
 }
 
 /**
@@ -84,13 +100,20 @@ export const overviewAction = async (ctx) => {
  */
 export const channelAction = async (ctx) => {
   debug(ctx.session.studtastic);
-  ctx.session.studtastic.channel.name = ctx.request.query.name;
 
-  await ctx.render("pages/03-channel", {
-    user: ctx.session.studtastic.user,
-    channel: ctx.session.studtastic.channel,
-    messages: defaultChatMessages
-  });
+  if (ctx.request.query.name)
+    ctx.session.studtastic.channel.name = ctx.request.query.name;
+
+  if (ctx.session.studtastic.channel.name) {
+    await ctx.render("pages/03-channel", {
+      user: ctx.session.studtastic.user,
+      channel: ctx.session.studtastic.channel,
+      messages: defaultChatMessages
+    });
+  } else
+    ctx.redirect(`/`);
+
+
 }
 
 /**
@@ -105,7 +128,7 @@ export const voiceThreadAction = async (ctx) => {
   debug(ctx.session.studtastic);
 
   // Als Student: Veranstaltungsstatus auf "Ansprache" setzen
-  if(!ctx.session.studtastic.user.isAdmin)
+  if (!ctx.session.studtastic.user.isAdmin)
     ctx.session.studtastic.channel.status = 'Ansprache & Fragerunde'
   else
     showPseudoStudent = true;
@@ -115,8 +138,8 @@ export const voiceThreadAction = async (ctx) => {
   await ctx.render("pages/04-voice-thread", {
     user: ctx.session.studtastic.user,
     channel: ctx.session.studtastic.channel,
-    isInThread : ctx.session.studtastic.user.isInThread ,
-    showPseudoStudent : showPseudoStudent
+    isInThread: ctx.session.studtastic.user.isInThread,
+    showPseudoStudent: showPseudoStudent
   });
 }
 
@@ -132,14 +155,14 @@ export const privateVoiceThreadAction = async (ctx) => {
 
   ctx.session.studtastic.user.isInThread = `voice-private-${ctx.request.query.id}`;
 
-  if(ctx.session.studtastic.user.isAdmin) {
+  if (ctx.session.studtastic.user.isAdmin) {
     ctx.session.studtastic.channel.status = 'Eigenverantwortlicher Lernanteil';
   }
 
   await ctx.render("pages/05-private-voice-thread", {
     user: ctx.session.studtastic.user,
     channel: ctx.session.studtastic.channel,
-    isInThread : ctx.session.studtastic.user.isInThread 
+    isInThread: ctx.session.studtastic.user.isInThread
   });
 }
 

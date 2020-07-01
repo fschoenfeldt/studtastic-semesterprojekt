@@ -1,7 +1,4 @@
 <ul class="events">
-    <a class="homelink" href="/overview">
-        <li class="event"><span class="event--title">HOME</span></li>
-    </a>
     <a href="/channel?name=SPROG">
         <li class="event {% if channel.name == 'SPROG' %}active{% endif %}"><span class="event--title">SPROG</span></li>
     </a>
@@ -10,5 +7,8 @@
     </a>
     <a href="/channel?name=ALGO">
         <li class="event {% if channel.name == 'ALGO' %}active{% endif %}"><span class="event--title">ALG</span></li>
+    </a>
+    <a class="homelink" href="/logout" title="Logout">
+        <li class="event"><span class="event--title">👋</span></li>
     </a>
 </ul>
