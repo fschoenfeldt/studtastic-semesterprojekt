@@ -1,6 +1,7 @@
 .sidebar--threads {
     display: grid;
-    // !TODO !IMPORTANT grid-template-rows: ??;
+    grid-template-rows: repeat(6, min-content);
+    grid-row-gap: $spacing;
     border-right: thin solid $grey;
     padding-right: $spacing;
 
@@ -11,7 +12,6 @@
         padding: $spacing/2;
         padding-bottom: 0;
         margin-top: -$spacing/2;
-        margin-bottom: $spacing;
 
         h2 { margin: 0 }
     }
@@ -28,6 +28,16 @@
         a {
             color: $dark-grey;
             font-weight: bold;
+        }
+
+        &.active {
+            background: $dark-blue;
+            color: white;
+            border-radius: $spacing/5;
+            padding: $spacing/2;
+            a {
+                color: white;
+            }
         }
     }
 

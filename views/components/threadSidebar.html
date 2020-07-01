@@ -1,14 +1,14 @@
 <div class="sidebar--threads">
     <a class="color-grey hover no-underline" href="/channel?name={{channel.name}}"><h1 class="channel--title">{{channel.name}}</h1></a>
-    <div class="channel--status" id="channel--status">
+    <div class="channel--status" {% if user.isAdmin %} id="channel--status" {% endif %}>
         <small>Status d. Veranstaltung</small>
         <h2 class="channel--status_title">{{ channel.status }}</h2>
     </div>
-    <div id="threadsidebar--status__ctx-menu"></div>
+    {% if user.isAdmin %}<div id="threadsidebar--status__ctx-menu"></div>{% endif %}
 
     <h2>Sprachkanäle</h2>
     <ul class="voice-channels">
-        <li><a title="Dem Kanal beitreten" href="/thread/voice">Ansprache & Fragerunde</a></li>
+        <li class="{% if isInThread == 'voice-public' %}active{% endif %}"><a title="Dem Kanal beitreten" href="/thread/voice">Ansprache & Fragerunde</a></li>
         <ul class="channel-users">
             {% if isInThread == 'voice-public' and user.isAdmin %}
                 <li>{{user.username}}</li>
@@ -22,7 +22,7 @@
                 <li>{{user.username}}</li>
             {% endif %}
         </ul>
-        <li><a title="Dem Kanal beitreten" href="/thread/voice/private?id=1">Laborplatz 1</a></li>
+        <li class="{% if isInThread == 'voice-private-1' %}active{% endif %}"><a title="Dem Kanal beitreten" href="/thread/voice/private?id=1">Laborplatz 1</a></li>
         <ul class="channel-users">
             {% if isInThread == 'voice-private-1' %}
                 <li id="sidebar-user-4">Sabine Lustig</li>
@@ -37,7 +37,7 @@
     </ul>
     <h2>Textkanäle</h2>
     <ul class="text-channels">
-        <li><a title="Dem Kanal beitreten" href="/channel?name={{channel.name}}">Ansprache & Fragerunde</a></li>
+        <li class="{% if isInThread == 'text-public' %}active{% endif %}"><a title="Dem Kanal beitreten" href="/channel?name={{channel.name}}">Ansprache & Fragerunde</a></li>
         <li>Laborplatz 1</li>
         <li>Laborplatz 2</li>
     </ul>

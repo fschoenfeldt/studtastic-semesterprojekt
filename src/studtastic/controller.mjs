@@ -105,9 +105,12 @@ export const channelAction = async (ctx) => {
     ctx.session.studtastic.channel.name = ctx.request.query.name;
 
   if (ctx.session.studtastic.channel.name) {
+    ctx.session.studtastic.user.isInThread = `text-public`;
+
     await ctx.render("pages/03-channel", {
       user: ctx.session.studtastic.user,
       channel: ctx.session.studtastic.channel,
+      isInThread: ctx.session.studtastic.user.isInThread,
       messages: defaultChatMessages
     });
   } else
