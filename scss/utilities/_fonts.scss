@@ -21,12 +21,16 @@ h5 {
 /**
     Font utilitites 
 **/
-.color-grey {
+.color-darkgrey {
     color: $dark-grey !important;
 }
 
 .color-grey {
     color: $grey !important;
+}
+
+.color-white {
+    color: white !important;
 }
 
 .hover {
@@ -43,4 +47,20 @@ h5 {
 
 .no-underline {
     text-decoration: none;
+}
+
+.mb-05 {
+    margin-bottom: $spacing/2;
+}
+
+.mb-1 {
+    margin-bottom: $spacing;
+}
+
+.mt-05 {
+    margin-top: $spacing/2;
+}
+
+.mt-1 {
+    margin-top: $spacing;
 }

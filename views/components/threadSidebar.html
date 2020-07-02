@@ -1,8 +1,11 @@
 <div class="sidebar--threads">
-    <a class="color-grey hover no-underline" href="/channel?name={{channel.name}}"><h1 class="channel--title">{{channel.name}}</h1></a>
-    <div class="channel--status" {% if user.isAdmin %} id="channel--status" {% endif %}>
+    <a class="color-darkgrey hover no-underline" href="/channel?name={{channel.name}}"><h1 class="channel--title">{{channel.name}}</h1></a>
+    <div class="channel--status">
         <small>Status d. Veranstaltung</small>
         <h2 class="channel--status_title">{{ channel.status }}</h2>
+        {% if user.isAdmin %}
+            <div class="mb-05 mt-05"><a href="#" class="color-white no-underline" id="channel--status_last">&larr;</a>&nbsp; Status wechseln &nbsp; <a class="color-white no-underline" href="#" id="channel--status_next">&rarr;</a></div>
+         {% endif %}
     </div>
     {% if user.isAdmin %}<div id="threadsidebar--status__ctx-menu"></div>{% endif %}
 

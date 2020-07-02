@@ -10,15 +10,10 @@
         color: white;
         text-align: center;
         padding: $spacing/2;
-        padding-bottom: 0;
         margin-top: -$spacing/2;
 
         h2 { margin: 0 }
     }
-
-    h2 {
-        margin: $spacing 0;
-    }  
 
     ul.voice-channels>li,
     ul.text-channels>li {
