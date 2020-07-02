@@ -39,32 +39,6 @@ const registerUserContextMenu = () => {
     });
 }
 
-const registerStatusContextMenu = () => {
-    // Kontextmenü-Einstellungen
-    const contextMenuContent = [{
-            title: 'Warten auf Beginn d. V.',
-            command: '1'
-        },
-        {
-            title: 'Ansprache',
-            command: '2'
-        },
-        {
-            title: 'Offene Fragerunde',
-            command: '3'
-        },
-        {
-            title: 'Eigenverantwortlicher Lernanteil',
-            command: '4'
-        }
-    ]
-
-    // Kontextmenü finden und einstellen
-    const statusContextMenu = new ContextMenu($('#threadsidebar--status__ctx-menu'));
-
-    statusContextMenu.register('#channel--status', onClick, contextMenuContent)
-}
-
 // Hier könnte man beim Klick je nach cmd tolle Dinge machen
 const onClick = (e, cmd) => {
     console.log(cmd);
@@ -73,7 +47,7 @@ const onClick = (e, cmd) => {
             alert('ist jetzt stummgeschaltet');
             break;
         
-        case '1':
+        /* case '1':
             setChannelStatus('Warten auf Beginn der Veranstaltung')
             break;
         case '2':
@@ -87,7 +61,7 @@ const onClick = (e, cmd) => {
             $$('.user-pseudo-student').forEach((elem) => {
                 elem.classList.add('note-active');
             });
-            break;
+            break; */
     }
 }
 
@@ -97,7 +71,6 @@ const setChannelStatus = (status) => {
 
 export const register = () => {
     registerUserContextMenu();
-    registerStatusContextMenu();
 }
 
 export default register;
