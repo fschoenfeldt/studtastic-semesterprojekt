@@ -2,8 +2,6 @@ import Koa from "koa";
 import session from "koa-session";
 import bodyParser from "koa-bodyparser";
 import Debug from "debug";
-import sqlite3 from 'sqlite3'
-import * as sqlite from "sqlite";
 import serve from "koa-static";
 import paths from "path";
 import router from "./src/studtastic/router.mjs";
@@ -58,10 +56,10 @@ async function main(path) {
   });
 
   // Give the app the db so contoller.mjs can access it
-  app.context.db = await sqlite.open({
+ /*  app.context.db = await sqlite.open({
     'filename': path,
     driver: sqlite3.Database
-  });
+  }); */
 
   // Actually start the server with provided port
   app.listen(port);

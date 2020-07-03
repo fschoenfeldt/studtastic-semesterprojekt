@@ -35,7 +35,7 @@ export const indexAction = async (ctx) => {
   } */
 
   ctx.session.studtastic = studtasticObject;
-  await ctx.render("pages/00-index", {
+  await ctx.render("./pages/00-index", {
     user: ctx.session.studtastic.user,
     channel: ctx.session.studtastic.channel
   });
