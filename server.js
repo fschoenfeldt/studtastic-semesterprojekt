@@ -39,10 +39,10 @@ const SESSIONCONFIG = {
  */
 async function main(path) {
   const __dirname = paths.resolve();
-  app.use(serve(__dirname + "/web"));
+  app.use(serve('/home/hsfl/prototyp/web'));
 
   // Use nujucks for templating
-  app.use(nunjucks("views"));
+  app.use(nunjucks('/home/hsfl/prototyp/views'));
 
   app.use(session(SESSIONCONFIG, app));
   app.use(bodyParser());
